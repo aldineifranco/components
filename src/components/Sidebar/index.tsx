@@ -1,5 +1,6 @@
 import { Button } from "../Button";
-import { Container, Menu } from "./styles";
+import { Container, Menu, Bars } from "./styles";
+import { HiMenu } from "react-icons/hi";
 
 export function Sidebar() {
   const menuItem = [
@@ -26,12 +27,18 @@ export function Sidebar() {
   ]
 
   return (
-    <Container>
-      {menuItem.map((item) => (
-        <Menu to={item.path} key={item.id}>
-          <Button title={item.name} />
-        </Menu>
-      ))}
-    </Container>
+    <>
+      <Bars>
+        <HiMenu size={32} />
+      </Bars>
+
+      <Container>
+        {menuItem.map((item) => (
+          <Menu to={item.path} key={item.id}>
+            <Button title={item.name} />
+          </Menu>
+        ))}
+      </Container>
+    </>
   )
 }
