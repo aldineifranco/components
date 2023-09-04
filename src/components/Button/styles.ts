@@ -5,8 +5,9 @@ export const Container = styled.button`
   padding: 0 2rem;
   height: 48px;
   border: 1px solid
-    ${({ theme }) => theme["white"]};
-  background-color: transparent;
+    ${({ theme }) => theme["gray-700"]};
+  background-color: ${({ theme }) =>
+    theme["green-700"]};
   border-radius: 8px;
   color: ${({ theme }) => theme["white"]};
   transition: background-color 0.5s, color 0.5s;

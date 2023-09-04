@@ -1,8 +1,5 @@
 import { Container } from "./styles";
-
-interface ButtonProps {
-  title?: string;
-}
+import { ButtonProps } from "../../interfaces/ButtonProps";
 
 export const Button = ({ title }: ButtonProps) => {
   return (
