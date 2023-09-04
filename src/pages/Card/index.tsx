@@ -1,9 +1,9 @@
 import { Container } from "./styles"
 
-export const Nav = () => {
+export const Card = () => {
   return (
     <Container>
-      <h1>nav</h1>
+      <h1>card</h1>
     </Container>
   )
 }

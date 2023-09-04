@@ -1,13 +1,13 @@
 import { Container } from "./styles";
 
 interface ButtonProps {
-  title: string;
+  title?: string;
 }
 
-export const Button = ({ title, ...rest }: ButtonProps) => {
+export const Button = ({ title }: ButtonProps) => {
   return (
-    <Container {...rest}>
-      { title }
+    <Container>
+      {title}
     </Container>
   )
 }
