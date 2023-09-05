@@ -38,7 +38,7 @@ export function Sidebar({ active }: SidebarProps) {
       <Container>
         {menuItem.map((item) => (
           <Menu to={item.path} key={item.id}>
-            <Button title={item.name} icon={item.icon}/>
+            <Button title={item.name} icon={item.icon} actived={active}/>
           </Menu>
         ))}
       </Container>

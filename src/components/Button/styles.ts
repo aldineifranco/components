@@ -14,13 +14,10 @@ export const Container = styled.button<ButtonProps>`
       variant === "primary"
         ? theme["gray-700"]
         : theme["white"]};
-  background-color: ${({
-    theme,
-    variant
-  }) =>
+  background-color: ${({ theme, variant }) =>
     variant === "primary"
       ? theme["green-700"]
-      : theme["white"] };
+      : theme["white"]};
   border-radius: 8px;
   color: ${({ theme, variant }) =>
     variant === "primary"
@@ -33,5 +30,9 @@ export const Container = styled.button<ButtonProps>`
     background-color: ${({ theme }) =>
       theme["white"]};
     color: ${({ theme }) => theme["green-300"]};
+  }
+
+  p {
+    display: ${({ actived }) => actived ? 'none' : ''};
   }
 `;

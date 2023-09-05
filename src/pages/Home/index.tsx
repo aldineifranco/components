@@ -6,15 +6,15 @@ import { HiMenu } from "react-icons/hi";
 import { useState } from "react";
 
 export function Home({ children }: SidebarProps) {
-  const [sidebar, setSidebar] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
 
 
   const handleShowSidebar = () => {
-    setSidebar(!sidebar)
+    setShowSidebar(!showSidebar)
   }
   return (
     <>
-      <Container active={sidebar}>
+      <Container active={showSidebar}>
         <Header />
 
         <Bars>

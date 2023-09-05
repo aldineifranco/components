@@ -1,13 +1,10 @@
 import { Container } from "./styles";
 import { ButtonProps } from "../../interfaces/ButtonProps";
-import { FiArchive } from 'react-icons/fi';
-import { SidebarProps } from "../../interfaces/SidebarProps";
 
-export function Button({ title, icon, ...rest }: ButtonProps) {
-
+export function Button({ title, icon, actived, ...rest }: ButtonProps) {
 
   return (
-    <Container {...rest}>
+    <Container {...rest} actived={actived}>
       <span>{icon}</span>
       <p>{title}</p>
     </Container>

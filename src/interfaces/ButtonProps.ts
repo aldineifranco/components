@@ -5,4 +5,5 @@ export interface ButtonProps {
   variant?: "primary" | "secondary";
   fill?: "primary" | "secondary";
   icon?: ReactNode;
+  actived?: boolean;
 }
