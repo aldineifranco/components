@@ -1,44 +1,48 @@
-import { Button } from "../Button";
-import { Container, Menu, Bars } from "./styles";
-import { HiMenu } from "react-icons/hi";
 
-export function Sidebar() {
+import { Button } from "../Button";
+import { Container, Menu } from "./styles";
+import { HiMenu, HiTable, HiCheck, HiInbox } from "react-icons/hi";
+import { SidebarProps } from "../../interfaces/SidebarProps";
+
+export function Sidebar({ active }: SidebarProps) {
+  
   const menuItem = [
     {
       id: 1,
       path: "/",
       name: "Button",
+      icon: <HiMenu />
     },
     {
       id: 2,
       path: "/card",
       name: "Card",
+      icon: <HiCheck />
     },
     {
       id: 3,
       path: "/input",
       name: "Input",
+      icon: <HiInbox />
     },
     {
       id: 4,
       path: "/table",
       name: "Table",
+      icon: <HiTable />
     },
   ]
 
   return (
     <>
-      <Bars>
-        <HiMenu size={32} />
-      </Bars>
-
       <Container>
         {menuItem.map((item) => (
           <Menu to={item.path} key={item.id}>
-            <Button title={item.name} />
+            <Button title={item.name} icon={item.icon}/>
           </Menu>
         ))}
       </Container>
+
     </>
   )
 }
