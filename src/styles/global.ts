@@ -24,4 +24,10 @@ export const GlobalStyle = createGlobalStyle`
     font: 400 1rem Roboto, sans-serif;
   }
 
+  button, a {
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+
 `;

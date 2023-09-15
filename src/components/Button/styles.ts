@@ -10,19 +10,12 @@ export const Container = styled.button<ButtonProps>`
   align-items: center;
   gap: 0.5rem;
   border: 1px solid
-    ${({ theme, variant }) =>
-      variant === "primary"
-        ? theme["gray-700"]
-        : theme["white"]};
-  background-color: ${({ theme, variant }) =>
-    variant === "primary"
-      ? theme["green-700"]
-      : theme["white"]};
+    ${({ theme }) => theme["gray-700"]};
+  background-color: ${({ theme }) =>
+    theme["green-700"]};
+
   border-radius: 8px;
-  color: ${({ theme, variant }) =>
-    variant === "primary"
-      ? theme["white"]
-      : theme["green-700"]};
+  color: ${({ theme }) => theme["white"]};
   transition: background-color 0.5s, color 0.5s;
   cursor: pointer;
 
@@ -32,7 +25,4 @@ export const Container = styled.button<ButtonProps>`
     color: ${({ theme }) => theme["green-300"]};
   }
 
-  p {
-    display: ${({ actived }) => actived ? 'none' : ''};
-  }
 `;

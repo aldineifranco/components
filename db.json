@@ -1,0 +1,20 @@
+{
+  "dadosUsuario": [
+    {
+      "nome": "Nathan Franco",
+      "email": "nathan@gmail.com",
+      "password": "123456",
+      "profissao": "dev",
+      "privacyTerms": true,
+      "id": 4
+    },
+    {
+      "nome": "Aldinei Souza Franco",
+      "email": "aldineifranco@gmail.com",
+      "password": "0101",
+      "profissao": "dev",
+      "privacyTerms": true,
+      "id": 5
+    }
+  ]
+}
