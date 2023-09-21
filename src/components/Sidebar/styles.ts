@@ -18,19 +18,27 @@ export const Menu = styled(NavLink)<SidebarProps>`
   gap: 1.5rem;
   text-decoration: none;
 
-  > li {
+  > div {
     list-style: none;
     color: ${({ theme }) => theme["white"]};
     display: flex;
-    justify-content: start;
+    justify-content: center;
     padding: 0 1rem;
     gap: 8px;
     align-items: center;
     font-size: 1.25rem;
   }
 
-  li:hover {
-    color: ${({ theme }) =>
-      theme["gray-100"]};
+  div:hover {
+    color: ${({ theme }) => theme["gray-100"]};
+  }
+
+  .show-text {
+    display: block;
+  }
+
+  .hide-text {
+    display: none;
   }
 `;
+

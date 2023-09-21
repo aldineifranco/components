@@ -5,4 +5,5 @@ export interface SidebarProps {
   id?: number;
   children?: ReactNode;
   active?: boolean;
+  showSidebar?: boolean;
 }

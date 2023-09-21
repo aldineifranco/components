@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { Container } from "./styles";
-import { useForm } from 'react-hook-form';
+import { set, useForm } from 'react-hook-form';
 import { api } from "../../lib/axios";
+
+
 
 export function Formulario() {
   const { register, handleSubmit } = useForm();
   const [output, setOutput] = useState('');
 
-  const onSubmit = async (data: any) => {
-    setOutput(JSON.stringify(data, null, 2))
 
+  const onSubmit = async (data: any) => {
     try {
       const response = await api.post('/dadosUsuario', data);
       if (response.status === 201) {
@@ -79,11 +80,12 @@ export function Formulario() {
         <div>
           <button onClick={handleSubmit(onSubmit)}>Criar conta</button>
         </div>
+        <pre>
+          {output}
+        </pre>
       </form>
 
-      <pre>
-        {output}
-      </pre>
+     
     </Container>
   )
 }

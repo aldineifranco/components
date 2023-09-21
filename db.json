@@ -15,6 +15,46 @@
       "profissao": "dev",
       "privacyTerms": true,
       "id": 5
+    },
+    {
+      "nome": "Michele",
+      "email": "michele@gmail.com",
+      "password": "00000",
+      "profissao": "analista",
+      "privacyTerms": true,
+      "id": 6
+    },
+    {
+      "nome": "Aldinei Souza Franco",
+      "email": "aldineifranco@gmail.com",
+      "password": "8888",
+      "profissao": "ux-ui",
+      "privacyTerms": false,
+      "id": 7
+    },
+    {
+      "nome": "Aldinei Souza Franco",
+      "email": "aldineifranco@gmail.com",
+      "password": "8888",
+      "profissao": "ux-ui",
+      "privacyTerms": false,
+      "id": 8
+    },
+    {
+      "nome": "José",
+      "email": "jose@gmail.com",
+      "password": "123465",
+      "profissao": "dev",
+      "privacyTerms": true,
+      "id": 9
+    },
+    {
+      "nome": "Aldinei Souza Franco",
+      "email": "aldineifranco@gmail.com",
+      "password": "12356",
+      "profissao": "dev",
+      "privacyTerms": true,
+      "id": 10
     }
   ]
 }

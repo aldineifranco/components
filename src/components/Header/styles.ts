@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.header`
-  height: 105px;
   grid-area: header;
   background-color: ${({ theme }) =>
     theme["green-700"]};

@@ -79,5 +79,9 @@ export const Container = styled.div`
           theme["green-300"]};
       }
     }
+
+    > pre {
+      text-align: center;
+    }
   }
 `;

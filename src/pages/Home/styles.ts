@@ -2,10 +2,13 @@ import styled from "styled-components";
 import { SidebarProps } from "../../interfaces/SidebarProps";
 
 export const Container = styled.div<SidebarProps>`
+  width: 100%;
+  height: 100vh;
+
   display: grid;
   grid-template-columns: ${({ active }) =>
-    active ? "250px auto" : "120px auto"};
-  grid-template-rows: 105px auto;
+    active ? "200px auto" : "60px auto"};
+  grid-template-rows: 105px 1fr;
   grid-template-areas:
     "menu header"
     "sidebar content";
@@ -14,7 +17,6 @@ export const Container = styled.div<SidebarProps>`
 export const Content = styled.main`
   grid-area: content;
   padding: 0 1rem;
-  overflow-y: auto;
   margin: 0;
 `;
 

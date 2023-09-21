@@ -7,6 +7,7 @@ import { Input } from "../pages/Input";
 import { Table } from "../pages/Table";
 import { Credenciais } from "../pages/Credenciais";
 import { Formulario } from "../pages/Formulario";
+import { ToDo } from "../pages/ToDo";
 
 export function AppRoutes() {
   return (
@@ -20,6 +21,7 @@ export function AppRoutes() {
           <Route path="/table" element={<Table />} />
           <Route path="/credenciais" element={<Credenciais />} />
           <Route path="/formulario" element={<Formulario />} />
+          <Route path="/todo" element={<ToDo />} />
         </Routes>
       </Home>
     </BrowserRouter>

@@ -1,45 +1,52 @@
-
+import { useState } from "react";
+import { SidebarProps } from "../../interfaces/SidebarProps";
 import { Container, Menu } from "./styles";
-import { HiMenu, HiTable, HiCheck, HiInbox, HiKey, HiFolder } from "react-icons/hi";
+import { HiMenu, HiTable, HiCheck, HiInbox, HiKey, HiFolder, HiChat } from "react-icons/hi";
 
-export function Sidebar() {
+export function Sidebar({ showSidebar }: SidebarProps) {
   
   const menuItem = [
     {
       id: crypto.randomUUID(),
       path: "/",
       name: "Button",
-      icon: <HiMenu />
+      icon: <HiMenu />,
     },
     {
       id: crypto.randomUUID(),
       path: "/card",
       name: "Card",
-      icon: <HiCheck />
+      icon: <HiCheck />,
     },
     {
       id: crypto.randomUUID(),
       path: "/input",
       name: "Input",
-      icon: <HiInbox />
+      icon: <HiInbox />, 
     },
     {
       id: crypto.randomUUID(),
       path: "/table",
       name: "Table",
-      icon: <HiTable />
+      icon: <HiTable />,
     },
     {
       id: crypto.randomUUID(),
       path: "/credenciais",
       name: "Credenciais",
-      icon: <HiKey />
+      icon: <HiKey />,
     },
     {
       id: crypto.randomUUID(),
       path: "/formulario",
       name: "Formulário",
-      icon: <HiFolder />
+      icon: <HiFolder />,
+    },
+    {
+      id: crypto.randomUUID(),
+      path: "/todo",
+      name: "ToDo",
+      icon: <HiChat />,
     },
   ]
 
@@ -47,11 +54,11 @@ export function Sidebar() {
     <>
       <Container>
         {menuItem.map((item) => (
-          <Menu to={item.path} key={item.id}>
-            <li>
-              {item.icon}
-              <a>{item.name}</a>
-            </li>
+          <Menu to={item.path} key={item.id} active>
+            <div>
+              <span>{item.icon}</span> 
+              <p className={showSidebar ? 'show-text' : 'hide-text' }>{item.name}</p>
+            </div>
           </Menu>
         ))}
       </Container>

@@ -1,10 +1,12 @@
+import { SidebarProps } from "../../interfaces/SidebarProps";
 import { Container } from "./styles";
 
 
-export const Header = () => {
+
+export const Header = ({ children }: SidebarProps) => {
   return (
     <Container>
-      <h1>nav</h1>
+      <h1>{children}</h1>
     </Container>
   )
 }

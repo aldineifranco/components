@@ -7,20 +7,22 @@ import { useState } from "react";
 
 export function Home({ children }: SidebarProps) {
   const [showSidebar, setShowSidebar] = useState(true);
-
+  const [ name, setName] = useState<SidebarProps>({})
 
   const handleShowSidebar = () => {
     setShowSidebar(!showSidebar)
   }
   return (
     <Container active={showSidebar}>
-      <Header />
+      <Header>
+        <h1>{name.name}</h1>
+      </Header>
 
       <Bars>
         <HiMenu size={32} onClick={handleShowSidebar} />
       </Bars>
 
-      <Sidebar />
+      <Sidebar showSidebar={showSidebar} />
 
       <Content>
         {children}
