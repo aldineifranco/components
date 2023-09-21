@@ -6,8 +6,12 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+`;
 
-  div {
+export const InputToDo = styled.div`
+    width: 100%;
     display: flex;
     gap: 1rem;
     padding: 2rem;
@@ -15,9 +19,9 @@ export const Container = styled.div`
       ${({ theme }) => theme["gray-500"]};
     border-radius: 8px;
     background-color: ${({ theme }) =>
-      theme["gray-700"]};
-
-    input {
+  theme["gray-700"]};
+      
+      > input {
       border: 1px solid
         ${({ theme }) => theme["gray-500"]};
       border-radius: 4px;
@@ -42,5 +46,4 @@ export const Container = styled.div`
         filter: brightness(0.9);
       }
     }
-  }
 `;

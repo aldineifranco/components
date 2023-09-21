@@ -1,12 +1,15 @@
-import { Container } from "../styles";
+import { Mensagem } from "./styles";
+import { FiX } from 'react-icons/fi';
 
 export function CardToDo({text}: any) {
   return (
-    <Container>
+    <Mensagem>
       <div>
         <p>{text}</p>
-        <button>Adidionar</button>
+        <FiX color='red' cursor='pointer'/>
       </div>
-    </Container>
+    </Mensagem>
+     
+
   )
 }
