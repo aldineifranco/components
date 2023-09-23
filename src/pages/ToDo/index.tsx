@@ -1,29 +1,39 @@
-import { useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { CardToDo } from "./CardToDo";
 import { Container, InputToDo } from "./styles";
 
-export function ToDo() {
+interface ToDoProps {
+  text: string;
+  id: number;
+  completed?: boolean;
+}
+
+export function ToDo({text}: ToDoProps) {
   const [todo, setTodo] = useState('');
   const [cardsToDo, setCardsToDo] = useState([''])
 
-  function handleInputToDo(e: any) {
-    setTodo(e.target.value)
+  function handleInputToDo(event: ChangeEvent<HTMLInputElement>) {
+    setTodo(event.target.value)
   }
 
-  function handleAddToDo() {
-    setCardsToDo(todo);
+  function handleCreateNewToDo(event: FormEvent) {
+    event.preventDefault();
+    setCardsToDo([...cardsToDo, todo]);
+    setTodo('');
   }
 
   return (
       <Container>
-          <InputToDo>
-            <input type="text" value={todo} onChange={handleInputToDo}/>
-            <button onClick={handleAddToDo}>Adidionar</button>
-      </InputToDo>
+          <InputToDo onSubmit={handleCreateNewToDo}>
+            <input type="text" value={todo} onChange={handleInputToDo} />
+            <button type="submit">Adidionar</button>
+          </InputToDo>
       
       {
         cardsToDo.map((item) => (
-          <CardToDo text={item} />
+          <CardToDo
+            key={item}
+            text={item} />
         ))
       }
       

@@ -10,7 +10,7 @@ export const Container = styled.div`
   gap: 1rem;
 `;
 
-export const InputToDo = styled.div`
+export const InputToDo = styled.form`
     width: 100%;
     display: flex;
     gap: 1rem;

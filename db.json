@@ -55,6 +55,14 @@
       "profissao": "dev",
       "privacyTerms": true,
       "id": 10
+    },
+    {
+      "nome": "Aldinei teste 3",
+      "email": "aldinei@gmail.com",
+      "password": "147",
+      "profissao": "dev",
+      "privacyTerms": true,
+      "id": 11
     }
   ]
 }

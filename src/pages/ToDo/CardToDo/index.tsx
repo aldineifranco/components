@@ -1,7 +1,13 @@
 import { Mensagem } from "./styles";
 import { FiX } from 'react-icons/fi';
 
-export function CardToDo({text}: any) {
+interface ToDoProps {
+  text: string;
+  id: number;
+  completed: boolean;
+}
+
+export function CardToDo({text, id, completed}: ToDoProps) {
   return (
     <Mensagem>
       <div>
