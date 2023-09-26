@@ -63,6 +63,22 @@
       "profissao": "dev",
       "privacyTerms": true,
       "id": 11
+    },
+    {
+      "nome": "Aldinei",
+      "email": "aldineifranco@gmail.com",
+      "password": "123",
+      "profissao": "dev",
+      "privacyTerms": true,
+      "id": 12
+    },
+    {
+      "nome": "DaviNathan",
+      "email": "aldineifranco@gmail.com",
+      "password": "123",
+      "profissao": "dev",
+      "privacyTerms": true,
+      "id": 13
     }
   ]
 }
