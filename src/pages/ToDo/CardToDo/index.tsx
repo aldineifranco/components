@@ -2,12 +2,12 @@ import { Mensagem } from "./styles";
 import { FiX } from 'react-icons/fi';
 
 interface ToDoProps {
-  text: string;
-  id: number;
-  completed: boolean;
+  text?: string;
+  id?: number;
+  onDeleteComment: (text: string) => void;
 }
 
-export function CardToDo({text, id, completed}: ToDoProps) {
+export function CardToDo({text}: ToDoProps) {
   return (
     <Mensagem>
       <div>

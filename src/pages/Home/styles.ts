@@ -8,7 +8,7 @@ export const Container = styled.div<SidebarProps>`
   display: grid;
   grid-template-columns: ${({ active }) =>
     active ? "200px auto" : "60px auto"};
-  grid-template-rows: 105px 1fr;
+  grid-template-rows: 105px auto;
   grid-template-areas:
     "menu header"
     "sidebar content";

@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { SidebarProps } from "../../interfaces/SidebarProps";
 
 export const Container = styled.aside`
-  width: 100%;
-  height: 100vh;
   background-color: ${({ theme }) =>
     theme["green-700"]};
   grid-area: sidebar;

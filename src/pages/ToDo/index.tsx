@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from "react";
 import { CardToDo } from "./CardToDo";
 import { Container, InputToDo } from "./styles";
 
@@ -8,11 +8,12 @@ interface ToDoProps {
   completed?: boolean;
 }
 
-export function ToDo({text}: ToDoProps) {
+export function ToDo() {
   const [todo, setTodo] = useState('');
   const [cardsToDo, setCardsToDo] = useState([''])
 
   function handleInputToDo(event: ChangeEvent<HTMLInputElement>) {
+    event.target.setCustomValidity('');
     setTodo(event.target.value)
   }
 
@@ -20,12 +21,26 @@ export function ToDo({text}: ToDoProps) {
     event.preventDefault();
     setCardsToDo([...cardsToDo, todo]);
     setTodo('');
+    console.log(cardsToDo)
+  }
+
+  function handleNewCommentInvalid(event: InvalidEvent<HTMLInputElement>) {
+    event.target.setCustomValidity('Esse campo é obrigatório');
+  }
+
+  function handleDeleteComment(commentToDelete: string) {
+    setCardsToDo(cardsToDo.filter((item) => item !== commentToDelete));
   }
 
   return (
       <Container>
           <InputToDo onSubmit={handleCreateNewToDo}>
-            <input type="text" value={todo} onChange={handleInputToDo} />
+            <input 
+              type="text" 
+              value={todo} 
+              onChange={handleInputToDo}
+              onInvalid={handleNewCommentInvalid}
+            />
             <button type="submit">Adidionar</button>
           </InputToDo>
       
@@ -33,10 +48,11 @@ export function ToDo({text}: ToDoProps) {
         cardsToDo.map((item) => (
           <CardToDo
             key={item}
-            text={item} />
+            text={item}
+            onDeleteComment={handleDeleteComment}
+          />
         ))
       }
-      
       </Container>
 
   )
