@@ -6,10 +6,15 @@ import { FiSearch } from "react-icons/fi";
 
 export function Inputs() {
   const [value, setValue] = useState('');
+  const [count, setCount] = useState(0);
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     setValue(event.target.value);
     console.log(value)
+  }
+
+  function handleClick() {
+    setCount(count + 1);
   }
 
   return (
@@ -17,14 +22,19 @@ export function Inputs() {
       <Input 
         onChange={handleChange} 
         type="text"                     
-        label="texto" 
-        icon={<RiAB size={24} />} />
+        label="texto"
+        iconLeft={<RiAB size={24} />}
+      />  
 
       <Input 
         onChange={handleChange} 
         type="number" 
         label="número"
-        icon={<FiSearch size={24} />} />
+        iconLeft={<FiSearch size={24} />}
+        onClick={handleClick}
+      />
+
+      <p>{count}</p>
     </Container>
   )
 }
