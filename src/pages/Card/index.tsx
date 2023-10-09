@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Container, Content } from "./styles"
 import { api } from "../../lib/axios";
+import { Input } from "../../components/Input";
+import { InputProps } from "../../interfaces/InputProps";
 
 interface DadosProps {
   id: number;
@@ -11,8 +13,7 @@ interface DadosProps {
 
 export const Card = () => {
   const [dados, setDados] = useState<DadosProps[]>([]);
-
-
+  const [value, setValue] = useState<InputProps[]>([]);
 
   useEffect(() => {
     async function dadosDb() {
@@ -21,10 +22,20 @@ export const Card = () => {
     }
     dadosDb()
   }, [])
-  
+
+  function handleChange(e: any) {
+    setValue(e.target.value)
+  }
+
+  function handleClick(e: any) {
+    e.preventDefault();
+    console.log(value)
+  }
 
   return (
     <Container>
+      <Input onChange={handleChange} onClick={handleClick} />
+
       {dados.map((item) =>  (
           <Content key={item.id}>
             <div>
