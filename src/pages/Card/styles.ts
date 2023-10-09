@@ -11,6 +11,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   align-items: center;
   border: 1px solid
