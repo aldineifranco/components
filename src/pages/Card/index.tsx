@@ -32,27 +32,27 @@ export const Card = () => {
     console.log(value)
   }
 
-  const filteredDados = dados.filter((item) => 
-  item.nome.toLowerCase().includes(value.toLowerCase()) ||
-  item.email.toLowerCase().includes(value.toLowerCase()) ||
-  item.profissao.toLowerCase().includes(value.toLowerCase())
+  const filteredDados = dados.filter((item) =>
+    item.nome.toLowerCase().includes(value.toLowerCase()) ||
+    item.email.toLowerCase().includes(value.toLowerCase()) ||
+    item.profissao.toLowerCase().includes(value.toLowerCase())
   );
-  
+
   return (
     <Container>
       <Input onChange={handleChange} onClick={handleClick} />
 
-      {filteredDados.map((item) =>  (
-          <Content key={item.id}>
-            <div>
-              <p>{item.nome}</p>
-            </div>
-            <div>
-              <p>{item.email}</p>
-              <span>{item.profissao}</span>
-            </div>
-          </Content>
-        )
+      {filteredDados.map((item) => (
+        <Content key={item.id}>
+          <div>
+            <p>{item.nome}</p>
+          </div>
+          <div>
+            <p>{item.email}</p>
+            <span>{item.profissao}</span>
+          </div>
+        </Content>
+      )
       )}
 
 

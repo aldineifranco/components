@@ -1,7 +1,7 @@
-import { useState } from "react";
 import { SidebarProps } from "../../interfaces/SidebarProps";
 import { Container, Menu } from "./styles";
-import { HiMenu, HiTable, HiCheck, HiInbox, HiKey, HiFolder, HiChat } from "react-icons/hi";
+import { HiMenu, HiTable, HiCheck, HiInbox, HiKey, HiFolder, HiChat, HiOutlineCheck } from "react-icons/hi";
+import { FiCheckSquare } from "react-icons/fi";
 
 export function Sidebar({ showSidebar }: SidebarProps) {
   
