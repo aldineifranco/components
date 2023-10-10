@@ -4,19 +4,20 @@ interface CheckBoxProps {
   label?: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
   checked: boolean;
-  for: string;
+  htmlFor?: string;
+  id?: string;
 }
 
-export function Checkbox({ onChange, checked, label }: CheckBoxProps) {
+export function Checkbox({ onChange, checked, label, htmlFor, id }: CheckBoxProps) {
   return (
     <Container>      
         <input
+          id={id}
           type="checkbox"
           onChange={onChange}
           checked={checked}
-          id="checkbox-1"
         />
-        <label>{label}</label>
+      <label htmlFor={htmlFor}>{label}</label>
     </Container>
   )
 }

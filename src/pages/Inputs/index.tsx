@@ -1,4 +1,4 @@
-import { Container } from "./styles";
+import { Container, Content } from "./styles";
 import { Input } from "../../components/Input";
 import { useState } from "react";
 import { RiAB } from "react-icons/ri";
@@ -8,7 +8,7 @@ import { Checkbox } from "../../components/Checkbox";
 export function Inputs() {
   const [value, setValue] = useState('');
   const [count, setCount] = useState(0);
-  const [ checked, setChecked ] = useState(false);
+  const [checked, setChecked] = useState(false);
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     setValue(event.target.value);
@@ -19,31 +19,40 @@ export function Inputs() {
     setCount(count + 1);
   }
 
-  function handleCheckbox() {
+  function handleCheckboxChange() {
     setChecked(!checked);
-    console.log(checked)
   }
 
   return (
     <Container>
-      <Input 
-        onChange={handleChange} 
-        type="text"                     
+
+      <Input
+        onChange={handleChange}
+        type="text"
         label="texto"
         iconLeft={<RiAB size={24} />}
-      />  
+      />
 
-      <Input 
-        onChange={handleChange} 
-        type="number" 
+      <Input
+        onChange={handleChange}
+        type="number"
         label="número"
         iconLeft={<FiSearch size={24} />}
         onClick={handleClick}
       />
 
-      <Checkbox onChange={handleCheckbox} checked={checked} label="Opção x" for=""></Checkbox>
+      <Content>
+        <Checkbox
+          id="opcao-1" 
+          onChange={handleCheckboxChange} 
+          checked={checked} 
+          label="Opção 1" 
+          htmlFor="opcao-1" 
+        />
+  
+      </Content>
 
-      <p>{count} - {value}</p>
     </Container>
+
   )
 }
