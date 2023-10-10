@@ -34,7 +34,7 @@ export function Inputs() {
         onClick={handleClick}
       />
 
-      <p>{count}</p>
+      <p>{count} - {value}</p>
     </Container>
   )
 }

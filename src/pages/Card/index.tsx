@@ -13,7 +13,7 @@ interface DadosProps {
 
 export const Card = () => {
   const [dados, setDados] = useState<DadosProps[]>([]);
-  const [value, setValue] = useState<InputProps[]>([]);
+  const [value, setValue] = useState<string>('');
 
   useEffect(() => {
     async function dadosDb() {
@@ -23,7 +23,7 @@ export const Card = () => {
     dadosDb()
   }, [])
 
-  function handleChange(e: any) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setValue(e.target.value)
   }
 
@@ -32,11 +32,17 @@ export const Card = () => {
     console.log(value)
   }
 
+  const filteredDados = dados.filter((item) => 
+  item.nome.toLowerCase().includes(value.toLowerCase()) ||
+  item.email.toLowerCase().includes(value.toLowerCase()) ||
+  item.profissao.toLowerCase().includes(value.toLowerCase())
+  );
+  
   return (
     <Container>
       <Input onChange={handleChange} onClick={handleClick} />
 
-      {dados.map((item) =>  (
+      {filteredDados.map((item) =>  (
           <Content key={item.id}>
             <div>
               <p>{item.nome}</p>
