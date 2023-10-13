@@ -1,14 +1,19 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { Container } from "./styles";
 import { set, useForm } from 'react-hook-form';
 import { api } from "../../lib/axios";
-
+import { Checkbox } from "../../components/Checkbox";
 
 
 export function Formulario() {
   const { register, handleSubmit } = useForm();
   const [output, setOutput] = useState('');
+  const [checked, setChecked] = useState(false);
 
+  function handleCheckeboxChange () {
+    setChecked(!checked);
+    console.log(checked)
+  }
 
   const onSubmit = async (data: any) => {
     try {
@@ -18,7 +23,7 @@ export function Formulario() {
       } else {
         setOutput("Ocorreu um erro ao enviar os dados.");
       }
-    } catch(error) {
+    } catch (error) {
       setOutput("Ocorreu um erro ao enviar os dados");
       console.error('Erro ao enviar dados:', error);
     }
@@ -67,25 +72,24 @@ export function Formulario() {
         </div>
         <div className="checked-termos">
           <div>
-            <input
-              type="checkbox"
-              {...register('privacyTerms')}
+            <Checkbox
+              checked={true} 
+              onChange={handleCheckeboxChange}
+              label='Aceite os termos de privacidade'
             />
-          </div>
-          <div>
-            <label>Aceite os termos de privacidade</label>
           </div>
         </div>
 
         <div>
           <button onClick={handleSubmit(onSubmit)}>Criar conta</button>
         </div>
+        
         <pre>
           {output}
         </pre>
       </form>
 
-     
+
     </Container>
   )
 }

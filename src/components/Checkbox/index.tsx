@@ -2,8 +2,8 @@ import { Container } from "./styles";
 
 interface CheckBoxProps {
   label?: string;
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
-  checked: boolean;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  checked?: boolean;
   htmlFor?: string;
   id?: string;
 }

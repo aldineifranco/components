@@ -79,6 +79,27 @@
       "profissao": "dev",
       "privacyTerms": true,
       "id": 13
+    },
+    {
+      "nome": "Aldinei Souza Franco",
+      "email": "aldineifranco@gmail.com",
+      "password": "123",
+      "profissao": "dev",
+      "id": 14
+    },
+    {
+      "nome": "",
+      "email": "",
+      "password": "",
+      "profissao": "",
+      "id": 15
+    },
+    {
+      "nome": "",
+      "email": "",
+      "password": "",
+      "profissao": "",
+      "id": 16
     }
   ]
 }

@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  height: 80vh;
+  grid-area: main;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
 
   > form {
     width: 60%;
@@ -41,18 +43,7 @@ export const Container = styled.div`
       border-radius: 4px;
     }
 
-    .checked-termos {
-      display: flex;
-      align-items: center;
-      justify-content: start;
-      background-color: ${({ theme }) =>
-        theme["gray-700"]};
-      color: ${({ theme }) => theme["white"]};
-      border: 0;
-      border-radius: 4px;
-      gap: 8px;
-      padding: 0.5rem;
-    }
+  
 
     button {
       width: 100%;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-   cursor: pointer;
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -30,6 +30,15 @@ export const Container = styled.div`
       theme["green-500"]};
     width: 20px;
     height: 20px;
+    position: relative;
+  }
+
+  & input[type="checkbox"]:checked::before {
+    content: "✔";
+    position: absolute;
+    bottom: 0rem;
+    left: 0.2rem;
+    color: ${({ theme }) => theme["white"]};
   }
 
   & label {

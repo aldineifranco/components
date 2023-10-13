@@ -8,7 +8,7 @@ import { Checkbox } from "../../components/Checkbox";
 export function Inputs() {
   const [value, setValue] = useState('');
   const [count, setCount] = useState(0);
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(true);
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     setValue(event.target.value);
@@ -49,7 +49,6 @@ export function Inputs() {
           label="Opção 1" 
           htmlFor="opcao-1" 
         />
-  
       </Content>
 
     </Container>
